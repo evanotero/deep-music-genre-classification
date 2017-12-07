@@ -1,5 +1,6 @@
 # Deep Music Genre Classification
-Using Deep Learning to Categorize Music as Time Progresses Through Spectrogram Analysis
+Using Deep Learning to Categorize Music as Time Progresses Through Spectrogram Analysis.
+
 
 ## About
 Convolutional-Recurrent Neural Networks for Live Music Genre Recognition is a project aimed at creating a neural network recognizing music genre and providing a user-friendly visualization for the network's current belief of the genre of a song.
@@ -13,6 +14,10 @@ TODO
 
 ## Usage
 TODO
+
+
+## Slides
+The slide deck can be found on Google Slides: [Using Deep Learning to Categorize Music as Time Progresses Through Spectrogram Analysis](https://docs.google.com/presentation/d/1MANAML13S-PBGx8bsbI8gdaKGPJ2bPd_UNbA3E2txdg/edit?usp=sharing).
 
 
 ## Background
