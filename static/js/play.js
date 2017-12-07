@@ -13,6 +13,8 @@ function drawPieChart(canvasID, distribution, timeFn) {
             label: genre
         };
     });
+
+    console.log(distribution);
     console.log(data);
 
     var shown = false;
@@ -27,7 +29,7 @@ function drawPieChart(canvasID, distribution, timeFn) {
         var i = lowerBound(distribution, timeFn(), function(x) {
             return x[0];
         });
-        for(var j = 0; j < 10; j++) {
+        for(var j = 0; j < 16; j++) {
             chart.segments[j].value =
                 parseFloat(distribution[i][1][GENRES[j]]);
         }
