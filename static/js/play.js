@@ -13,6 +13,7 @@ function drawPieChart(canvasID, distribution, timeFn) {
             label: genre
         };
     });
+    console.log(data);
 
     var shown = false;
     var context = $(canvasID).get(0).getContext('2d');

@@ -1,15 +1,21 @@
-var GENRES = ['blues', 'classical', 'country', 'disco', 'hiphop', 'jazz',
-    'metal', 'pop', 'reggae', 'rock'];
+var GENRES = ['international', 'blues', 'jazz', 'classical', 'old-time/historic', 'country', 'pop',
+          'rock', 'easy listening', 'soul/rnb', 'electronic', 'folk', 'spoken', 'hip-hop', 'experimental', 'instrumental']
 
 var GENRE_TO_COLOR = {
-    'blues': '#0033cc',
-    'classical': '#6600ff',
-    'country': '#cc6600',
-    'disco': '#ff66cc',
-    'hiphop': '#660066',
-    'jazz': '#cccc00',
-    'metal': '#999966',
-    'pop': '#00cc66',
-    'reggae': '#ffcc66',
-    'rock': '#cc0000'
+    'international': '#00cc7e',
+    'blues': '#6600ff',
+    'jazz': '#cc6600',
+    'classical': '#ff66cc',
+    'old-time/historic': '#6ecc00',
+    'country': '#cccc00',
+    'pop': '#999966',
+    'rock': '#ffcc66',
+    'easy listening': '#00cccc',
+    'soul/rnb': '#18cc00',
+    'electronic': '#cc0000',
+    'folk': '#66caff',
+    'spoken': 'rgba(0, 72, 25, 0.97)',
+    'hip-hop': '#006666',
+    'experimental': '#0033cc',
+    'instrumental': '#999966',
 };
