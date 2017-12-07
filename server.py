@@ -54,7 +54,7 @@ class UploadHandler(tornado.web.RequestHandler):
         Turns the matrix of predictions given by a model into a dict mapping
         time in the song to a music genre distribution.
         """
-        predictions = np.reshape(predictions, predictions.shape[2:])
+        predictions = np.reshape(predictions, np.array(predictions).shape[2:])
         n_steps = predictions.shape[0]
         delta_t = duration / n_steps
 
