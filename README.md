@@ -8,6 +8,18 @@ Convolutional-Recurrent Neural Networks for Live Music Genre Recognition is a pr
 This project uses Keras, using TensorFlow for the backend, for the neural network and Tornado for serving requests.
 
 
+## Data Representation & Dataset
+TODO
+
+
+## Model
+TODO
+
+
+## Results
+TODO
+
+
 ## Demo
 TODO
 
