@@ -40,7 +40,7 @@ class UploadHandler(tornado.web.RequestHandler):
             os.makedirs(UPLOADS_PATH)
 
         uploaded_path = os.path.join(UPLOADS_PATH, uploaded_name)
-        with open(uploaded_path, 'w') as f:
+        with open(uploaded_path, 'wb') as f:
             f.write(file_info['body'])
         (predictions, duration) = genre_recognizer.recognize(uploaded_path)
         genre_distributions = self.get_genre_distribution_over_time(predictions, duration)
@@ -54,7 +54,7 @@ class UploadHandler(tornado.web.RequestHandler):
         Turns the matrix of predictions given by a model into a dict mapping
         time in the song to a music genre distribution.
         """
-        predictions = np.reshape(predictions, predictions.shape[1:])
+        predictions = np.reshape(predictions, predictions.shape[2:])
         n_steps = predictions.shape[0]
         delta_t = duration / n_steps
 
@@ -79,16 +79,12 @@ application = tornado.web.Application([
 
 if __name__ == '__main__':
     parser = OptionParser()
-    parser.add_option('-m', '--model', dest='model_path',
-                      default=os.path.join(os.path.dirname(__file__),
-                                           'models/model.yaml'),
-                      help='load keras model from MODEL yaml file', metavar='MODEL')
     parser.add_option('-w', '--weights', dest='weights_path',
                       default=os.path.join(os.path.dirname(__file__),
-                                           'models/weights.h5'),
+                                           'models/weights.best.hdf5'),
                       help='load keras model WEIGHTS hdf5 file', metavar='WEIGHTS')
     parser.add_option('-p', '--port', dest='port',
-                      default=8080,
+                      default=8000,
                       help='run server at PORT', metavar='PORT')
     options, args = parser.parse_args()
     genre_recognizer = GenreRecognizer(build_weighted_model(options.weights_path))
