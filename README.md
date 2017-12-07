@@ -1,2 +1,19 @@
-# deep-music-genre-classification
-🎵 Using Deep Learning to Categorize Music as Time Progresses Through Spectrogram Analysis
+# Deep Music Genre Classification
+Using Deep Learning to Categorize Music as Time Progresses Through Spectrogram Analysis
+
+## Abot
+Convolutional-Recurrent Neural Networks for Live Music Genre Recognition is a project aimed at creating a neural network recognizing music genre and providing a user-friendly visualization for the network's current belief of the genre of a song.
+
+This project uses Keras, using TensorFlow for the backend, for the neural network and Tornado for serving requests.
+
+
+## Demo
+TODO
+
+
+## Usage
+TODO
+
+
+## Background
+The rationale for this particular model is based on several works, primarily [Grzegorz Gwardys and Daniel Grzywczak, Deep Image Features in Music Information Retrieval](http://ijet.pl/index.php/ijet/article/view/10.2478-eletel-2014-0042/53), [Recommending music on Spotify with Deep Learning](http://benanne.github.io/2014/08/05/spotify-cnns.html), and [Convolutional-Recurrent Neural Network for Live Music Genre Recognition](http://deepsound.io/music_genre_recognition.html).  
