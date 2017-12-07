@@ -78,6 +78,9 @@ audio {
     border-radius: 50%;
     overflow: hidden;
     background-color: #eaeaea;
+    -webkit-box-shadow: 0px 0px 57px -4px rgba(43,133,211,1);
+    -moz-box-shadow: 0px 0px 57px -4px rgba(43,133,211,1);
+    box-shadow: 0px 0px 57px -4px rgba(43,133,211,1);
 }
 
 #upload img {
@@ -87,8 +90,8 @@ audio {
     top: 0;
     bottom: 0;
     margin: auto;
-    max-width: 80%;
-    max-height: 80%;
+    max-width: 65%;
+    max-height: 65%;
 }
 
 #upload input {
