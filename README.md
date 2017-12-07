@@ -1,7 +1,7 @@
 # Deep Music Genre Classification
 Using Deep Learning to Categorize Music as Time Progresses Through Spectrogram Analysis
 
-## Abot
+## About
 Convolutional-Recurrent Neural Networks for Live Music Genre Recognition is a project aimed at creating a neural network recognizing music genre and providing a user-friendly visualization for the network's current belief of the genre of a song.
 
 This project uses Keras, using TensorFlow for the backend, for the neural network and Tornado for serving requests.
