@@ -1,10 +1,12 @@
 # To avoid errors during importing librosa.
-import matplotlib
-matplotlib.use('Agg')
+try:
+    import matplotlib
+    matplotlib.use('Agg')
+except Exception:
+    pass
 
 import numpy as np
 import librosa as lbr
-import keras.backend as K
 
 GENRES = ['international', 'blues', 'jazz', 'classical', 'old-time/historic', 'country', 'pop',
           'rock', 'easy listening', 'soul/rnb', 'electronic', 'folk', 'spoken', 'hip-hop', 'experimental',
@@ -26,15 +28,23 @@ MEL_KWARGS = {
 
 
 def get_layer_output_function(model, layer_name):
-    t_input = model.get_layer('input').input
-    output = model.get_layer(layer_name).output
-    f = K.function([t_input, K.learning_phase()], [output])
-    return lambda x: f([x, 0])  # learning_phase = 0 means test
+    if hasattr(model, 'get_layer_output_function'):
+        return model.get_layer_output_function(layer_name)
+    if hasattr(model, 'get_layer'):
+        try:
+            import keras.backend as K
+            t_input = model.get_layer('input').input
+            output = model.get_layer(layer_name).output
+            f = K.function([t_input, K.learning_phase()], [output])
+            return lambda x: f([x, 0])  # learning_phase = 0 means test
+        except Exception:
+            pass
+    return lambda x: [model(x)]
 
 
 def load_track(filename, enforce_shape=None):
     new_input, sample_rate = lbr.load(filename, mono=True)
-    features = lbr.feature.melspectrogram(new_input, **MEL_KWARGS).T
+    features = lbr.feature.melspectrogram(y=new_input, sr=sample_rate, **MEL_KWARGS).T
 
     if enforce_shape is not None:
         if features.shape[0] < enforce_shape[0]:

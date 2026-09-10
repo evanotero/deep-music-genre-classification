@@ -1,7 +1,8 @@
-h5py==2.6.0
-Keras==1.1.0
-librosa==0.4.1
-numpy==1.10.1
-pyyaml==3.12
-scipy==0.17.0
-tornado==4.3
+h5py>=3.8.0
+librosa>=0.10.0
+matplotlib>=3.7.0
+numpy>=1.24.0
+scipy>=1.10.0
+soundfile>=0.12.0
+torch>=2.0.0
+tornado>=6.2.0

@@ -6,7 +6,7 @@ function lowerBound(array, element, key) {
     var begin = 0;
     var end = array.length;
     while(begin < end) {
-        var m = floor((begin + end) / 2);
+        var m = Math.floor((begin + end) / 2);
         if(key(array[m]) >= element)
             end = m;
         else
